@@ -1,0 +1,8 @@
+<% @recipes.each do |recipe| %>
+  <div id="<%= dom_id recipe %>">
+    <h2><%= recipe.name %></h2>
+    <h3><%= recipe.user.name %></h3>
+    <p>Total Food Items: ???</p>
+    <p>Total Price: ???</p>
+  </div>
+<% end %>
