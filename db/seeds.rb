@@ -10,6 +10,13 @@ r1 = Recipe.create(name: 'Recipe 1', public: false, user: u1,
 r2 = Recipe.create(name: 'Recipe 2', public: true, user: u1,
   description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
                 tempor incididunt ut labore et dolore magna aliqua.')
+r3 = Recipe.create(name: 'Recipe 3', public: true, user: u1,
+  description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua.')
 
 r2f1 = RecipeFood.create(recipe: r2, food: f1, quantity: 3)
 r2f2 = RecipeFood.create(recipe: r2, food: f2, quantity: 3)
+
+r3f1 = RecipeFood.create(recipe: r3, food: f1, quantity: 3)
+r3f2 = RecipeFood.create(recipe: r3, food: f2, quantity: 3)
+r3f3 = RecipeFood.create(recipe: r3, food: f3, quantity: 3)
