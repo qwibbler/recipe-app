@@ -2,7 +2,7 @@
   <div id="<%= dom_id recipe %>">
     <h2><%= recipe.name %></h2>
     <h3><%= recipe.user.name %></h3>
-    <p>Total Food Items: ???</p>
-    <p>Total Price: ???</p>
+    <p>Total Food Items: <%= recipe.total_food %></p>
+    <p>Total Price: $<%= recipe.total_price %></p>
   </div>
 <% end %>
