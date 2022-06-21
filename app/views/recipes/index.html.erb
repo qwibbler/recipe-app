@@ -2,7 +2,7 @@
   <%= button_to "New recipe", new_recipe_path, method: :get,  class: "recipeIndex_newBtn"%>
   <div id="recipesList">
     <% @recipes.each do |recipe| %>
-      <%= render recipe %>
+      <%= render "recipe_index", recipe: recipe%>
     <% end %>
   </div>
 </section>
