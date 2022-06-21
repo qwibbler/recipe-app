@@ -1,19 +1,8 @@
 <h1>Recipes</h1>
 
 <div id="recipes">
-  <% if @recipes %>
-    <% @recipes.each do |recipe| %>
-      <%= render "recipe_index", recipe: recipe %>
-      <p>
-        <%= link_to "Show this recipe", recipe %>
-      </p>
-    <% end %>
-    <%= link_to "New recipe", new_recipe_path %>
-  <% else %>
-    <p>
-      Please <%= link_to "log in", new_user_session_path %> to see your recipes,
-      or go to <%= link_to "Public Recipes", public_recipes_path %> to see what is publically available.
-    </p>
+  <% @recipes.each do |recipe| %>
+    <%= render partial: "recipe_index", locals: {recipe: recipe} %>y
   <% end %>
 </div>
 
