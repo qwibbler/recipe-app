@@ -1,0 +1,6 @@
+<%= form_with  model: recipe, :html => {:name => 'public_form'} do |f| %>
+  <%= f.label :public, class: 'switch' do %>
+    <%= f.check_box :public, onchange: "document.public_form.submit()" %>
+    <span class="slider"></span>
+  <% end %>
+<% end %>

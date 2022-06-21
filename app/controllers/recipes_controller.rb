@@ -20,6 +20,14 @@ class RecipesController < ApplicationController
       end
   end
 
+  def update
+    if @recipe.update(recipe_params)
+      redirect_to @recipe, notice: 'Recipe was successfully updated.'
+    else
+      flash.now[:error] = 'Recipe was not updated.'
+    end
+  end
+
   def destroy
     @recipe.destroy
     redirect_to recipes_url, notice: 'Recipe was successfully destroyed.'  
@@ -38,6 +46,6 @@ class RecipesController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def recipe_params
-    params.fetch(:recipe, {})
+    params.require(:recipe).permit(:public)
   end
 end
