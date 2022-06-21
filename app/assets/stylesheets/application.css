@@ -78,3 +78,21 @@
   display: flex;
   flex-direction: column;
 }
+
+/* Switch */
+.switch {
+  position: relative;
+  display: inline-block;
+  --diameter: 20px;
+  --margin: 3px;
+  width: calc(calc(var(--diameter) * 2) + calc(var(--margin) * 2));
+  height: calc(var(--diameter) + calc(var(--margin) * 2));
+  margin: 0.3rem;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}

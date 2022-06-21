@@ -1,0 +1,6 @@
+<%= form_with model: recipe, url: (current_user.id) do |f|,
+  <%= f.label :public, class: 'field' do %>
+    <span>Date</span>
+    <%= f.text_field :date %>
+  <% end %>
+<% end %>

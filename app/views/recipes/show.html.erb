@@ -1,6 +1,12 @@
-<p style="color: green"><%= notice %></p>
-
-<%= render @recipe %>
+<% if can? :read, @recipe %>
+  <%= render @recipe %>
+<% else %>
+  <p>
+    Sorry, this recipe is not available for you! If you are this recipe's author, please
+    <%= link_to "log in", new_user_session_path %>
+    to see the recipe.
+  </p>
+<% end %>
 
 <div>
   <%= link_to "Back to recipes", recipes_path %>
