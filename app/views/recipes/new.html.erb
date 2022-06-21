@@ -1,9 +1,8 @@
-<h1>New recipe</h1>
+<section class="recipesNew">
+  <h1 class="recipesNew_title">New recipe</h1>
 
-<%= render "form", recipe: @recipe %>
+  <%= render "form", recipe: @recipe %>
 
-<br>
+  <%= button_to "Back to recipes", recipes_path, method: :get%>
 
-<div>
-  <%= link_to "Back to recipes", recipes_path %>
-</div>
+</section>
