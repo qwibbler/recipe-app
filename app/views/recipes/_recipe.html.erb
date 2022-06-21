@@ -9,7 +9,7 @@
   <h4>Steps:</h4>
   <p><%= recipe.description %></p>
   <%= button_to "Generate Shopping List" %>
-  <%= if can? :manage?, recipe then button_to "Add Ingredient" end %>
+  <%= if can? :manage?, recipe then link_to "Add Ingredient", new_recipe_recipe_food_path(@recipe) end %>
   <hr>
   <%= render partial: "shared/food_table", locals: { foods: @recipe.foods } %>
 </div>
