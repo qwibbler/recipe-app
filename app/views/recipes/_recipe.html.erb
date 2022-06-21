@@ -1,17 +1,3 @@
-<div class="recipeList_recipe">
-    <div class="recipeList_recipe_left">
-        <h2><%=recipe.name %></h2>
-        <div class="recipeList_recipe_left_btns">
-            <%= button_to "REMOVE", "recipes/#{recipe.id}", method: :delete, class:"recipesIndex_deleteBtn"%>
-            <%= link_to "SHOW", recipe %>
-        </div>
-    </div>
-    <div class="recipeList_recipe_rigth">
-        <%= recipe.description %>
-    </div>
-</div>
-
-
 <div id="<%= dom_id recipe %>">
   <h2><%= recipe.name %></h2>
   <h4>Public <%= render partial: "shared/switch", locals: {recipe: recipe} %></h4>
