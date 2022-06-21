@@ -17,11 +17,11 @@ class RecipesController < ApplicationController
 
   def create
     @recipe = Recipe.new(recipe_params)
-      if @recipe.save
-        redirect_to recipes_path, notice: 'Recipe was successfully created.'
-      else
-        render :new, status: :unprocessable_entity
-      end
+    if @recipe.save
+      redirect_to recipes_path, notice: 'Recipe was successfully created.'
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   def update
@@ -34,7 +34,7 @@ class RecipesController < ApplicationController
 
   def destroy
     @recipe.destroy
-    redirect_to recipes_url, notice: 'Recipe was successfully destroyed.'  
+    redirect_to recipes_url, notice: 'Recipe was successfully destroyed.'
   end
 
   def public
@@ -49,6 +49,7 @@ class RecipesController < ApplicationController
 
   def recipe_params
     defaults = { user_id: current_user.id }
-    params.require(:recipe).permit(:name, :preparation_time, :cooking_time, :description, :public, :user_id).merge(defaults)
+    params.require(:recipe).permit(:name, :preparation_time, :cooking_time, :description, :public,
+                                   :user_id).merge(defaults)
   end
 end

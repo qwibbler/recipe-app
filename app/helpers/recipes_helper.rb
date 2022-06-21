@@ -6,11 +6,10 @@ module RecipesHelper
   end
 
   def update_public(recipe)
-    if recipe.update(params.permit(public: ))
+    if recipe.update(params.permit(public:))
       flash.now[:notice] = 'Recipe was successfully updated.'
     else
       flash.now[:error] = 'Recipe was not updated.'
     end
   end
-
 end
