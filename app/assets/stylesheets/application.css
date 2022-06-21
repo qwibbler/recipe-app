@@ -1,19 +1,3 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
-
 .container {
   border: 1px solid;
   padding: 1rem;
@@ -77,4 +61,140 @@
 .foodNew_form div {
   display: flex;
   flex-direction: column;
+}
+
+/* recipe index section */
+.recipeIndex {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* recipe index | individual recipe inside the list */
+.recipeList_recipe {
+  display: flex;
+  align-items: center;
+  margin: 20px 0 20px 0;
+  border: 2pt black solid;
+  padding: 7px 0 7px 0;
+}
+
+/* recipe index | individual recipe inside the list | left part  */
+.recipeList_recipe_left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 30%;
+}
+
+/* recipe index | individual recipe inside the list | rigth part  */
+.recipeList_recipe_rigth {
+  width: 70%;
+}
+
+/* recipe index | individual recipe inside the list | left part | links */
+.recipeList_recipe_left_btns {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+/* recipe index | delete recipe button */
+.recipesIndex_deleteBtn {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  color: blue;
+  text-decoration: underline;
+}
+
+/* Switch */
+.switch {
+  position: relative;
+  display: inline-block;
+
+  --diameter: 14px;
+  --margin: 2px;
+
+  width: calc(calc(var(--diameter) * 2) + calc(var(--margin) * 2));
+  height: calc(var(--diameter) + calc(var(--margin) * 2));
+  margin: 0.3rem;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.slider::before {
+  position: absolute;
+  content: '';
+  height: var(--diameter);
+  width: var(--diameter);
+  left: var(--margin);
+  bottom: var(--margin);
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #68ad68;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #68ad68;
+}
+
+input:checked + .slider::before {
+  -webkit-transform: translateX(var(--diameter));
+  -ms-transform: translateX(var(--diameter));
+  transform: translateX(var(--diameter));
+}
+
+/* recipes new section */
+.recipesNew {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* recipes new form */
+.recipesNew_form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  margin-bottom: 10px;
+}
+
+.recipesNew_form > div {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+}
+
+.recipesNew_title {
+  align-self: center;
+}
+
+.recipesNew :last-child {
+  align-self: center;
 }

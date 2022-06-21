@@ -1,15 +1,4 @@
 <section class="foodIndex">
   <%= button_to "Add food", new_food_path, method: :get%>
-
-  <table class="foodIndex_table">
-  <tr>
-    <th>Food</th>
-    <th>Measurement unit</th>
-    <th>Unit price</th>
-    <th>Actions</th>
-  </tr>
-  <% @foods.each do |food| %>
-      <%= render food %>
-  <% end %>
-  </table>
+  <%= render partial: "shared/food_table", locals: { foods: @foods } %>
 </section>
