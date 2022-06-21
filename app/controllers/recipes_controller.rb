@@ -25,7 +25,7 @@ class RecipesController < ApplicationController
 
   def update
     if @recipe.update(recipe_params)
-      redirect_to [current_user, @recipe], notice: 'Recipe was successfully updated.'
+      redirect_to @recipe, notice: 'Recipe was successfully updated.'
     else
       flash.now[:error] = 'Recipe was not updated.'
     end
@@ -53,6 +53,6 @@ class RecipesController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def recipe_params
-    params.fetch(:recipe, {})
+    params.require(:recipe).permit(:public)
   end
 end

@@ -2,7 +2,7 @@
 
 <div id="recipes">
   <% @recipes.each do |recipe| %>
-    <%= render recipe %>
+    <%= render partial: "recipe_index", locals: {recipe: recipe} %>
     <p>
       <%= link_to "Show this recipe", recipe %>
     </p>
