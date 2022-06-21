@@ -1,0 +1,7 @@
+<section class="foodNew">
+  <h1>New Ingredient</h1>
+
+  <%= render "add_ingredient", recipe_food: @recipe_food %>
+  <%= button_to "Back to Recipe", @recipe, method: :get, class:"foodNew_backBtn" %>
+
+</section>
