@@ -14,12 +14,10 @@ class RecipesController < ApplicationController
   def create
     @recipe = Recipe.new(recipe_params)
 
-    respond_to do |format|
-      if @recipe.save
-        format.html { redirect_to recipe_url(@recipe), notice: 'Recipe was successfully created.' }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-      end
+    if @recipe.save
+      redirect_to recipe_url(@recipe), notice: 'Recipe was successfully created.'
+    else
+      render :new, status: :unprocessable_entity
     end
   end
 
@@ -34,10 +32,7 @@ class RecipesController < ApplicationController
   def destroy
     @recipe.destroy
 
-    respond_to do |format|
-      format.html { redirect_to recipes_url, notice: 'Recipe was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    redirect_to recipes_url, notice: 'Recipe was successfully destroyed.'
   end
 
   def public

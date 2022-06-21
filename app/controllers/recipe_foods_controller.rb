@@ -8,12 +8,10 @@ class RecipeFoodsController < ApplicationController
   def create
     @recipe_food = @recipe.recipe_foods.new(recipe_foods_params)
 
-    respond_to do |format|
-      if @recipe_food.save
-        format.html { redirect_to recipe_url(@recipe), notice: 'Ingredient successfully added.' }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-      end
+    if @recipe_food.save
+      redirect_to recipe_url(@recipe), notice: 'Ingredient successfully added.'
+    else
+      render :new, status: :unprocessable_entity
     end
   end
 
