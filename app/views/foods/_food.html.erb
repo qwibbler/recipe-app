@@ -1,2 +1,6 @@
-<div id="<%= dom_id food %>">
-</div>
+<tr>
+  <td><%=food.name%></td>
+  <td><%=food.measurement_unit%></td>
+  <td>$<%=food.price%></td>
+  <td><%= button_to "Delete", "foods/#{food.id}", method: :delete, class:"foodIndex_deleteBtn"%></td>
+</tr>
