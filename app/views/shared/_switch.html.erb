@@ -1,6 +1,6 @@
-<%= form_with model: recipe, url: (current_user.id) do |f|,
-  <%= f.label :public, class: 'field' do %>
-    <span>Date</span>
-    <%= f.text_field :date %>
+<%= form_with model: recipe do |f| %>
+  <%= f.label :public, class: 'switch' do %>
+    <%= f.check_box :public %>
+    <span class="slider"></span>
   <% end %>
 <% end %>

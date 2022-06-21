@@ -23,6 +23,14 @@ class RecipesController < ApplicationController
     end
   end
 
+  def update
+    if @recipe.update(recipe_params)
+      redirect_to [current_user, @recipe], notice: 'Recipe was successfully updated.'
+    else
+      flash.now[:error] = 'Recipe was not updated.'
+    end
+  end
+
   def destroy
     @recipe.destroy
 

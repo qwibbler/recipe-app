@@ -1,6 +1,6 @@
 <div id="<%= dom_id recipe %>">
   <h2><%= recipe.name %></h2>
-  <h4>Public <%# render switch %></h4>
+  <h4>Public <%= render partial: "shared/switch", locals: {recipe: recipe} %></h4>
   <h4>Preparation time: <%= time_hrs(recipe.preparation_time) %></h4>
   <h4>Cooking time: <%= time_hrs(recipe.cooking_time) %></h4>
   <h4>Cooking time: <%= time_hrs(recipe.cooking_time) %></h4>
