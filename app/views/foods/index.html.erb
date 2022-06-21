@@ -1,14 +1,15 @@
-<p style="color: green"><%= notice %></p>
+<section class="foodIndex">
+  <%= button_to "Add food", new_food_path, method: :get%>
 
-<h1>Foods</h1>
-
-<div id="foods">
+  <table class="foodIndex_table">
+  <tr>
+    <th>Food</th>
+    <th>Measurement unit</th>
+    <th>Unit price</th>
+    <th>Actions</th>
+  </tr>
   <% @foods.each do |food| %>
-    <%= render food %>
-    <p>
-      <%= link_to "Show this food", food %>
-    </p>
+      <%= render food %>
   <% end %>
-</div>
-
-<%= link_to "New food", new_food_path %>
+  </table>
+</section>

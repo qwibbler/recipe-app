@@ -1,8 +1,7 @@
-<%= form_with(model: food) do |form| %>
+<%= form_with model: food, class: "foodNew_form" do |form| %>
   <% if food.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(food.errors.count, "error") %> prohibited this food from being saved:</h2>
-
       <ul>
         <% food.errors.each do |error| %>
           <li><%= error.full_message %></li>
@@ -11,7 +10,17 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.submit %>
-  </div>
+<div>
+  <%= form.label :name %>
+  <%= form.text_field :name%>
+</div>
+<div>
+  <%= form.label :measurement_unit%>
+  <%= form.collection_select :measurement_unit, FoodsController::UNITS, :to_s, :to_s%>
+</div>
+<div>
+  <%= form.label :price%>
+  <%= form.number_field :price %>
+</div>
+  <%= form.submit %>
 <% end %>

@@ -1,15 +1,55 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+/* food index section */
+.foodIndex {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Add food button inside food index */
+.foodIndex :first-child {
+  align-self: flex-end;
+}
+
+/* food index table */
+.foodIndex_table {
+  align-self: center;
+  border-collapse: collapse;
+  width: 80%;
+  text-align: left;
+}
+
+/* food index table stripped */
+.foodIndex_table tr:nth-child(odd) {
+  background-color: #f2f2f2;
+}
+
+/* delete food button inside food index table */
+.foodIndex_deleteBtn {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  color: blue;
+  text-decoration: underline;
+}
+
+/* new food page */
+.foodNew {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* new food form */
+.foodNew_form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  margin-bottom: 10px;
+}
+
+.foodNew_form div {
+  display: flex;
+  flex-direction: column;
+}

@@ -1,11 +1,11 @@
-require 'rails_helper'
+# require 'rails_helper'
 
-RSpec.describe 'recipes/show', type: :view do
-  before(:each) do
-    @recipe = assign(:recipe, Recipe.create!)
-  end
+# RSpec.describe 'recipes/show', type: :view do
+#   before(:each) do
+#     @recipe = assign(:recipe, Recipe.create!)
+#   end
 
-  it 'renders attributes in <p>' do
-    render
-  end
-end
+#   it 'renders attributes in <p>' do
+#     render
+#   end
+# end
