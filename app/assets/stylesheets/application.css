@@ -112,15 +112,14 @@
 
 /* Switch */
 .switch {
-  position: relative;
-  display: inline-block;
-
   --diameter: 14px;
   --margin: 2px;
 
+  position: relative;
   width: calc(calc(var(--diameter) * 2) + calc(var(--margin) * 2));
   height: calc(var(--diameter) + calc(var(--margin) * 2));
   margin: 0.3rem;
+  display: inline-block;
 }
 
 .switch input {

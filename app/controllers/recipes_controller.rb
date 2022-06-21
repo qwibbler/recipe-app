@@ -26,7 +26,7 @@ class RecipesController < ApplicationController
 
   def update
     if @recipe.update(recipe_params)
-      redirect_to @recipe, notice: 'Recipe was successfully updated.'
+      flash.now[:notice] = 'Recipe was successfully updated.'
     else
       flash.now[:error] = 'Recipe was not updated.'
     end
