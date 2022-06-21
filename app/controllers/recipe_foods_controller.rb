@@ -27,6 +27,7 @@ class RecipeFoodsController < ApplicationController
   end
 
   private
+
   def set_recipe
     @recipe = Recipe.find(params[:id])
   end
