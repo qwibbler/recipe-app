@@ -168,3 +168,33 @@ input:checked + .slider::before {
   -ms-transform: translateX(var(--diameter));
   transform: translateX(var(--diameter));
 }
+
+/* recipes new section */
+.recipesNew {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* recipes new form */
+.recipesNew_form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  margin-bottom: 10px;
+}
+
+.recipesNew_form > div {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+}
+
+.recipesNew_title {
+  align-self: center;
+}
+
+.recipesNew :last-child {
+  align-self: center;
+}
