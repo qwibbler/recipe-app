@@ -2,7 +2,11 @@ class RecipesController < ApplicationController
   before_action :set_recipe, only: %i[show edit update destroy]
 
   def index
-    @recipes = Recipe.where(user_id: current_user.id)
+    if user_signed_in?
+      @recipes = Recipe.where(user_id: current_user.id)
+    else
+      redirect_to new_user_session_path
+    end
   end
 
   def show; end
