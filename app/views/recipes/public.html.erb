@@ -1,0 +1,10 @@
+<% @recipes.each do |recipe| %>
+  <%= link_to recipe, :action => 'go' do %>
+    <div class="container" id="<%= dom_id recipe %>">
+      <h2><%= recipe.name %></h2>
+      <h3>By <%= recipe.user.name %></h3>
+      <p>Total Food Items: <%= recipe.total_food %></p>
+      <p>Total Price: $<%= recipe.total_price %></p>
+    </div>
+  <% end %>
+<% end %>

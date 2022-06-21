@@ -1,5 +1,6 @@
 class Food < ApplicationRecord
   belongs_to :user
-  has_many :recipes, through: :recipes_foods
-  has_many :inventories, through: :inventories_foods
+  has_many :recipe_foods
+  has_many :recipes, through: :recipe_foods
+  has_many :inventories, through: :inventory_foods
 end
