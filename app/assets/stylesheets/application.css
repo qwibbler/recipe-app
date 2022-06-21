@@ -81,13 +81,14 @@
 
 /* Switch */
 .switch {
-  position: relative;
-  display: inline-block;
   --diameter: 14px;
   --margin: 2px;
+
+  position: relative;
   width: calc(calc(var(--diameter) * 2) + calc(var(--margin) * 2));
   height: calc(var(--diameter) + calc(var(--margin) * 2));
   margin: 0.3rem;
+  display: inline-block;
 }
 
 .switch input {
@@ -109,7 +110,7 @@
   border-radius: 34px;
 }
 
-.slider:before {
+.slider::before {
   position: absolute;
   content: '';
   height: var(--diameter);
@@ -130,7 +131,7 @@ input:focus + .slider {
   box-shadow: 0 0 1px #68ad68;
 }
 
-input:checked + .slider:before {
+input:checked + .slider::before {
   -webkit-transform: translateX(var(--diameter));
   -ms-transform: translateX(var(--diameter));
   transform: translateX(var(--diameter));

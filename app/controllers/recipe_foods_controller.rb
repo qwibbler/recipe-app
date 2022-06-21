@@ -1,13 +1,11 @@
 class RecipeFoodsController < ApplicationController
-  FOODS = Food.distinct.pluck(:name)
+  before_action :set_recipe, only: %i[new create update destroy]
 
   def new
-    @recipe = Recipe.find(params[:recipe_id])
     @recipe_food = @recipe.recipe_foods.new
   end
 
   def create
-    @recipe = Recipe.find(params[:recipe_id])
     @recipe_food = @recipe.recipe_foods.new(recipe_foods_params)
 
     respond_to do |format|
@@ -20,6 +18,7 @@ class RecipeFoodsController < ApplicationController
   end
 
   def update
+    @recipe_food = RecipeFood.find(params[:id])
     if @recipe.update(recipe_foods_params)
       redirect_to @recipe, notice: 'Ingredient successfully updated.'
     else
@@ -28,6 +27,9 @@ class RecipeFoodsController < ApplicationController
   end
 
   private
+  def set_recipe
+    @recipe = Recipe.find(params[:id])
+  end
 
   def recipe_foods_params
     params.require(:recipe_food).permit(:food_id, :quantity)
