@@ -2,9 +2,7 @@ class RecipesController < ApplicationController
   before_action :set_recipe, only: %i[show edit update destroy]
 
   def index
-    if current_user
-      @recipes = Recipe.where(user: current_user)
-    end
+    @recipes = Recipe.all
   end
 
   def show; end

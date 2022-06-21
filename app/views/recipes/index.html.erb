@@ -2,7 +2,11 @@
 
 <div id="recipes">
   <% @recipes.each do |recipe| %>
-    <%= render partial: "recipe_index", locals: {recipe: recipe} %>y
+    <%= render "recipe_index", recipe: recipe %>
+    <p>
+      <%= link_to "Show this recipe", recipe %>
+    </p>
   <% end %>
 </div>
 
+<%= link_to "New recipe", new_recipe_path %>

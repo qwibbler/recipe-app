@@ -1,8 +1,6 @@
 <div id="<%= dom_id recipe %>">
   <h2><%= recipe.name %></h2>
-  <% if can? :manage?, recipe %>
-    <h4>Public <%= render "shared/switch", recipe: recipe %></h4>
-  <% end %>
+  <h4>Public <%= render "shared/switch", recipe: recipe %></h4>
   <h4>Preparation time: <%= time_hrs(recipe.preparation_time) %></h4>
   <h4>Cooking time: <%= time_hrs(recipe.cooking_time) %></h4>
   <h4>Cooking time: <%= time_hrs(recipe.cooking_time) %></h4>
