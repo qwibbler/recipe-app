@@ -10,7 +10,9 @@
   </head>
 
   <body>
-    <header><h1>Recipe Book</h1></header>
+    <header><h1>Cook Book</h1></header>
+    <%= link_to 'Sign in', new_user_session_path %>
+    <%= button_to 'Log out', destroy_user_session_path, method: :delete %>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= yield %>

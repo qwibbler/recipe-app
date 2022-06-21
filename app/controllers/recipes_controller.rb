@@ -2,7 +2,11 @@ class RecipesController < ApplicationController
   before_action :set_recipe, only: %i[show edit update destroy]
 
   def index
-    @recipes = Recipe.all
+    if user_signed_in?
+      @recipes = Recipe.where(user_id: current_user.id)
+    else
+      redirect_to new_user_session_path
+    end
   end
 
   def show; end
@@ -13,9 +17,8 @@ class RecipesController < ApplicationController
 
   def create
     @recipe = Recipe.new(recipe_params)
-
     if @recipe.save
-      redirect_to recipe_url(@recipe), notice: 'Recipe was successfully created.'
+      redirect_to recipes_path, notice: 'Recipe was successfully created.'
     else
       render :new, status: :unprocessable_entity
     end
@@ -31,7 +34,6 @@ class RecipesController < ApplicationController
 
   def destroy
     @recipe.destroy
-
     redirect_to recipes_url, notice: 'Recipe was successfully destroyed.'
   end
 
@@ -41,13 +43,13 @@ class RecipesController < ApplicationController
 
   private
 
-  # Use callbacks to share common setup or constraints between actions.
   def set_recipe
     @recipe = Recipe.find(params[:id])
   end
 
-  # Only allow a list of trusted parameters through.
   def recipe_params
-    params.require(:recipe).permit(:public)
+    defaults = { user_id: current_user.id }
+    params.require(:recipe).permit(:name, :preparation_time, :cooking_time, :description, :public,
+                                   :user_id).merge(defaults)
   end
 end
