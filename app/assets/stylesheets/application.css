@@ -54,7 +54,7 @@ section {
 
 /* Add food button inside food index */
 .foodIndex :first-child {
-  align-self: flex-end;
+  align-self: center;
 }
 
 /* food index table */
@@ -99,7 +99,7 @@ th {
 }
 
 /* new food form */
-.form {
+form {
   display: flex;
   flex-direction: column;
   row-gap: 10px;
@@ -108,7 +108,7 @@ th {
   min-width: 33%;
 }
 
-.form > div {
+form > div {
   display: flex;
   flex-direction: column;
 }
