@@ -1,7 +1,7 @@
 <section class="foodNew">
   <h1>New Ingredient</h1>
 
-  <%= form_with model: @recipe_food, class: "foodNew_form", url: recipe_recipe_foods_path(@recipe) do |f| %>
+  <%= form_with model: @recipe_food, class: "recipefoodNew_form form", url: recipe_recipe_foods_path(@recipe) do |f| %>
     <%= render "add_ingredient", f: f, recipe_food: @recipe_food %>
     <%= f.submit "Add Ingredient" %>
   <% end %>

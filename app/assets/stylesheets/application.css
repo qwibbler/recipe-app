@@ -1,17 +1,8 @@
-.container {
-  border: 1px solid;
-  padding: 1rem;
-  display: grid;
-  grid-template: auto 1fr / auto 1fr;
-  grid-auto-flow: column;
-  gap: 0 2rem;
-}
-
-/* food index section */
-.foodIndex {
+section {
   width: 100%;
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 /* Add food button inside food index */
@@ -20,64 +11,84 @@
 }
 
 /* food index table */
-.foodIndex_table {
+.table {
+  border: 2pt black solid;
   align-self: center;
   border-collapse: collapse;
-  width: 80%;
   text-align: left;
 }
 
+.foodIndex.table {
+  width: 80%;
+}
+
+.foodShow.table {
+  width: 100%;
+}
+
 /* food index table stripped */
-.foodIndex_table tr:nth-child(odd) {
+.table tr:nth-child(odd) {
   background-color: #f2f2f2;
 }
 
+tr > * {
+  padding: 1rem;
+  border-left: 2px solid black;
+}
+
+th {
+  border-bottom: 2px black solid;
+}
+
 /* delete food button inside food index table */
-.foodIndex_deleteBtn {
+.link_Btn {
   background: none;
   border: none;
   padding: 0;
   cursor: pointer;
   color: blue;
   text-decoration: underline;
-}
-
-/* new food page */
-.foodNew {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  margin: 0 4px;
 }
 
 /* new food form */
-.foodNew_form {
+.form {
   display: flex;
   flex-direction: column;
   row-gap: 10px;
   margin-bottom: 10px;
+  align-self: center;
+  min-width: 33%;
 }
 
-.foodNew_form div {
+.form > div {
   display: flex;
   flex-direction: column;
+}
+
+.public {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+button,
+input {
+  padding: 0.2rem
 }
 
 /* recipe index section */
-.recipeIndex {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.recipesList {
+  width: 80%;
 }
 
 /* recipe index | individual recipe inside the list */
 .recipeList_recipe {
   display: flex;
   align-items: center;
-  margin: 20px 0 20px 0;
+  margin: 20px 0;
   border: 2pt black solid;
-  padding: 7px 0 7px 0;
+  padding: 7px;
 }
 
 /* recipe index | individual recipe inside the list | left part  */
@@ -86,28 +97,30 @@
   flex-direction: column;
   align-items: center;
   width: 30%;
+  padding: 7px;
 }
 
 /* recipe index | individual recipe inside the list | rigth part  */
 .recipeList_recipe_rigth {
   width: 70%;
+  padding: 7px;
 }
 
-/* recipe index | individual recipe inside the list | left part | links */
-.recipeList_recipe_left_btns {
+.btns {
   display: flex;
-  justify-content: space-evenly;
-  width: 100%;
+  flex-wrap: wrap;
 }
 
-/* recipe index | delete recipe button */
-.recipesIndex_deleteBtn {
-  background: none;
-  border: none;
-  padding: 0;
-  cursor: pointer;
-  color: blue;
-  text-decoration: underline;
+.recipeShow_top {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  flex-direction: row-reverse;
+}
+
+.recipeShow_top_left {
+  flex-grow: 1;
 }
 
 /* Switch */
@@ -166,34 +179,4 @@ input:checked + .slider::before {
   -webkit-transform: translateX(var(--diameter));
   -ms-transform: translateX(var(--diameter));
   transform: translateX(var(--diameter));
-}
-
-/* recipes new section */
-.recipesNew {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-/* recipes new form */
-.recipesNew_form {
-  display: flex;
-  flex-direction: column;
-  row-gap: 10px;
-  margin-bottom: 10px;
-}
-
-.recipesNew_form > div {
-  display: flex;
-  flex-direction: column;
-  align-self: center;
-}
-
-.recipesNew_title {
-  align-self: center;
-}
-
-.recipesNew :last-child {
-  align-self: center;
 }

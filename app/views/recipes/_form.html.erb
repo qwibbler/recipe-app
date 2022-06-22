@@ -1,4 +1,4 @@
-<%= form_with model: recipe, class:"recipesNew_form" do |form| %>
+<%= form_with model: recipe, class:"recipesNew_form form" do |form| %>
   <% if recipe.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(recipe.errors.count, "error") %> prohibited this recipe from being saved:</h2>
@@ -11,30 +11,32 @@
     </div>
   <% end %>
 
-<div>
-  <%= form.label :name %>
-  <%= form.text_field :name%>
-</div>
-<div>
-  <%= form.label :preparation_time %>
-  <%= form.number_field :preparation_time%>
-</div>
-<div>
-  <%= form.label :cooking_time %>
-  <%= form.number_field :cooking_time%>
-</div>
-<div>
-  <%= form.label :description %>
-  <%= form.text_field :description %>
-</div>
-<div>
-  <%= form.label :public %>
-  <%= form.label :public, class: 'switch' do %>
-    <%= form.check_box :public %>
-    <span class="slider"></span>
-  <% end %>
-</div>
   <div>
-    <%= form.submit %>
+    <%= form.label :name %>
+    <%= form.text_field :name%>
+  </div>
+  <div>
+    <%= form.label :preparation_time %>
+    <%= form.number_field :preparation_time%>
+  </div>
+  <div>
+    <%= form.label :cooking_time %>
+    <%= form.number_field :cooking_time%>
+  </div>
+  <div>
+    <%= form.label :description %>
+    <%= form.text_field :description %>
+  </div>
+  <div>
+    <div class="public">
+      <%= form.label :public %>
+      <%= form.label :public, class: 'switch' do %>
+        <%= form.check_box :public %>
+        <span class="slider"></span>
+      <% end %>
+    </div>
+  </div>
+  <div>
+    <div><%= form.submit %></div>
   </div>
 <% end %>

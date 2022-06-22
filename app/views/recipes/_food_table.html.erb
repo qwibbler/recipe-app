@@ -1,4 +1,4 @@
-<table class="foodIndex_table">
+<table class="foodShow table">
   <tr>
     <th>Food</th>
     <th>Quantity</th>
@@ -12,8 +12,10 @@
       <td><%= recipe_food.quantity %> <%= food.measurement_unit %></td>
       <td>$<%= recipe_food.total_price %></td>
       <td>
-        <%= button_to "Modify", edit_recipe_recipe_food_path(@recipe, recipe_food), method: :get, class:"foodIndex_deleteBtn" %>
-        <%= button_to "Delete", recipe_recipe_food_path(@recipe, recipe_food), method: :delete, class:"foodIndex_deleteBtn" %>
+        <div class="btns">
+          <%= button_to "Modify", edit_recipe_recipe_food_path(@recipe, recipe_food), method: :get, class:"link_Btn" %>
+          <%= button_to "Delete", recipe_recipe_food_path(@recipe, recipe_food), method: :delete, class:"link_Btn" %>
+        </div>
       </td>
     </tr>
   <% end %>
