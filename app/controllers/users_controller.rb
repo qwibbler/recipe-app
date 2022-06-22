@@ -1,17 +1,7 @@
 class UsersController < ApplicationController
-  # before_action :set_recipe
-
   def shopping_list
-    @foods = current_user.foods
+    @foods_list = current_user.missing_foods_qt
+    @total_price = 0
+    @foods_list.each { |food, qt| @total_price += food.price * qt }
   end
-
-  private
-
-  # def set_recipe
-  #   @recipe = Recipe.find(params[:recipe_id])
-  # end
-
-  # def recipe_foods_params
-  #   params.require(:recipe_food).permit(:food_id, :quantity)
-  # end
 end

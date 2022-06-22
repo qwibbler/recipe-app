@@ -1,22 +1,14 @@
-<table class="foodShow table">
+<table class="foodIndex table">
   <tr>
     <th>Food</th>
     <th>Quantity</th>
     <th>Value</th>
-    <th>Actions</th>
   </tr>
-  <% recipe_foods.each do |recipe_food| %>
-    <% food = recipe_food.food %>
+  <% foods.each do |food, qt| %>
     <tr>
       <td><%= food.name %></td>
-      <td><%= recipe_food.quantity %> <%= food.measurement_unit %></td>
-      <td>$<%= recipe_food.total_price %></td>
-      <td>
-        <div class="btns">
-          <%= button_to "Modify", edit_recipe_recipe_food_path(@recipe, recipe_food), method: :get, class:"link_Btn" %>
-          <%= button_to "Delete", recipe_recipe_food_path(@recipe, recipe_food), method: :delete, class:"link_Btn" %>
-        </div>
-      </td>
+      <td><%= qt %> <%= food.measurement_unit %></td>
+      <td>$<%= food.price %></td>
     </tr>
   <% end %>
 </table>
