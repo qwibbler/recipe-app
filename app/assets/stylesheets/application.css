@@ -197,3 +197,49 @@ input:checked + .slider::before {
 .recipesNew :last-child {
   align-self: center;
 }
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+.nav_wrapper {
+  display: flex;
+}
+
+.nav_item {
+  list-style: none;
+}
+
+.nav_item a {
+  text-decoration: none;
+  color: black;
+  padding: 1rem;
+}
+
+.navbar_left {
+  margin: 0;
+  padding: 0;
+  vertical-align: baseline;
+}
+
+.title {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.navbar_middle {
+  margin: 0;
+  padding: 0;
+  margin-left: auto;
+  vertical-align: 0;
+}
+
+.sessionButton {
+  padding: 0.5rem 1rem;
+  text-align: center;
+}
