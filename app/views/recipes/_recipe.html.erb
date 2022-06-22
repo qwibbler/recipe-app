@@ -11,5 +11,5 @@
   <%= button_to "Generate Shopping List" %>
   <%= if can? :manage?, recipe then link_to "Add Ingredient", new_recipe_recipe_food_path(@recipe) end %>
   <hr>
-  <%= render partial: "shared/food_table", locals: { foods: @recipe.foods } %>
+  <%= render "food_table", recipe_foods: @recipe.recipe_foods %>
 </div>
