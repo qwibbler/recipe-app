@@ -8,6 +8,14 @@ class User < ApplicationRecord
   has_many :foods, dependent: :destroy
   has_many :inventories
 
+  validates :name, presence: true
+  validates :name, length: { in: 3..30 }
+
+  validates :email, presence: true
+
+  validates :password, presence: true
+  validates :password, length: { minimum: 6 }
+
   def missing_foods_qt
     RecipeFood.includes(:food).where(recipe: recipes).where.not(food: foods)
       .group(:food).sum(:quantity)

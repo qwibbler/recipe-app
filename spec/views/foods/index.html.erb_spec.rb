@@ -17,7 +17,7 @@ RSpec.describe 'foods/index', type: :feature do
   end
 
   it 'when I click add food it redirects me to food new view' do
-    click_on "Add food"
+    click_on 'Add food'
     expect(current_path).to eq('/foods/new')
   end
 end

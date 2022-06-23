@@ -1,7 +1,7 @@
 module RecipesHelper
   def time_hrs(time)
-    return 'N/A' if time.nil? || time.strftime('%-I').zero?
+    return 'N/A' if time.nil? || time.hour.zero?
 
-    time.strftime('%-I Hour') + (time.strftime('%-I').to_i == 1 ? '' : 's')
+    "#{time.hour} hour#{time.hour == 1 ? '' : 's'}"
   end
 end
