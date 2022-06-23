@@ -14,7 +14,7 @@ class User < ApplicationRecord
   validates :email, presence: true
 
   validates :password, presence: true
-  validates :name, length: { minimum: 6 }
+  validates :password, length: { minimum: 6 }
 
   def missing_foods_qt
     RecipeFood.includes(:food).where(recipe: recipes).where.not(food: foods)
