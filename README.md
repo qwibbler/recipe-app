@@ -34,7 +34,7 @@ To run the project,
 
 
 ## Runnig tests
-- run `rails db:migrate rails db:seed RAILS_ENV=test`
+- run `rails db:seed RAILS_ENV=test`
 - run `rails db:seed RAILS_ENV=test`
 - run `rspec`
 
