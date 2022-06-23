@@ -6,6 +6,10 @@ RSpec.describe 'recipes/public', type: :view do
     render
   end
 
+  it 'renders only public recipes' do
+    expect(rendered).to_not have_content('Recipe 1')
+  end
+
   it 'renders public recipes name' do
     expect(rendered).to have_content('Recipe 2')
     expect(rendered).to have_content('Recipe 3')

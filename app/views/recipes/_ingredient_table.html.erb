@@ -12,10 +12,12 @@
       <td><%= recipe_food.quantity %> <%= food.measurement_unit %></td>
       <td>$<%= recipe_food.total_price %></td>
       <td>
-        <div class="btns">
-          <%= button_to "Modify", edit_recipe_recipe_food_path(@recipe, recipe_food), method: :get, class:"link_Btn" %>
-          <%= button_to "Delete", recipe_recipe_food_path(@recipe, recipe_food), method: :delete, class:"link_Btn" %>
-        </div>
+        <% if can? :manage?, recipe_food.recipe %>
+          <div class="btns">
+            <%= button_to "Modify", edit_recipe_recipe_food_path(@recipe, recipe_food), method: :get, class:"link_Btn" %>
+            <%= button_to "Delete", recipe_recipe_food_path(@recipe, recipe_food), method: :delete, class:"link_Btn" %>
+          </div>
+        <% end %>
       </td>
     </tr>
   <% end %>
