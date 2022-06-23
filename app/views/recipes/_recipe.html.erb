@@ -1,15 +1,19 @@
 <div id="<%= dom_id recipe %>">
   <h2><%= recipe.name %></h2>
-  <% if can? :manage?, recipe %>
-    <h4>Public <%= render "shared/switch", recipe: recipe %></h4>
-  <% end %>
-  <h4>Preparation time: <%= time_hrs(recipe.preparation_time) %></h4>
-  <h4>Cooking time: <%= time_hrs(recipe.cooking_time) %></h4>
-  <h4>Cooking time: <%= time_hrs(recipe.cooking_time) %></h4>
+  <div class="recipeShow_top">
+    <div>
+      <% if can? :manage?, recipe %>
+        <h4 class="public">Public <%= render "shared/switch", recipe: recipe %></h4>
+      <% end %>
+    </div>
+    <div class="recipeShow_top_left">
+      <h4>Preparation time: <%= time_hrs(recipe.preparation_time) %></h4>
+      <h4>Cooking time: <%= time_hrs(recipe.cooking_time) %></h4>
+    </div>
+  </div>
   <h4>Steps:</h4>
   <p><%= recipe.description %></p>
-  <%= button_to "Generate Shopping List" %>
-  <%= if can? :manage?, recipe then link_to "Add Ingredient", new_recipe_recipe_food_path(@recipe) end %>
   <hr>
-  <%= render partial: "shared/food_table", locals: { foods: @recipe.foods } %>
+  <%= if can? :manage?, recipe then link_to "Add Ingredient", new_recipe_recipe_food_path(@recipe), class: "link_Btn" end %>
+  <%= render "ingredient_table", recipe_foods: @recipe.recipe_foods %>
 </div>

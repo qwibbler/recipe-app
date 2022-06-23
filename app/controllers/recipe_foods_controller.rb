@@ -1,5 +1,5 @@
 class RecipeFoodsController < ApplicationController
-  before_action :set_recipe, only: %i[new create update destroy]
+  before_action :set_recipe
 
   def new
     @recipe_food = @recipe.recipe_foods.new
@@ -15,13 +15,23 @@ class RecipeFoodsController < ApplicationController
     end
   end
 
+  def edit
+    @recipe_food = RecipeFood.find(params[:id])
+  end
+
   def update
     @recipe_food = RecipeFood.find(params[:id])
-    if @recipe.update(recipe_foods_params)
+    if @recipe_food.update(recipe_foods_params)
       redirect_to @recipe, notice: 'Ingredient successfully updated.'
     else
       flash.now[:error] = 'Ingredient was not updated.'
     end
+  end
+
+  def destroy
+    @recipe_food = RecipeFood.find(params[:id])
+    @recipe_food.destroy
+    redirect_to @recipe, notice: 'Recipe was successfully destroyed.'
   end
 
   private
