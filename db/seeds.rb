@@ -9,9 +9,9 @@ f4 = Food.create(name: 'Sugar', measurement_unit: 'cups', price: 7, user: u2)
 r1 = Recipe.create(name: 'Recipe 1', public: false, user: u1, preparation_time: Time.parse('1:00'),
                    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
                 tempor incididunt ut labore et dolore magna aliqua.')
-r2 = Recipe.create(name: 'Recipe 2', public: true, user: u1, preparation_time: Time.parse('1:00'), cooking_time: Time.parse('2:00'),
-                   description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                tempor incididunt ut labore et dolore magna aliqua.')
+r2 = Recipe.create(name: 'Recipe 2', public: true, user: u1, preparation_time: Time.parse('1:00'),
+                   cooking_time: Time.parse('2:00'), description: 'Lorem ipsum dolor sit amet, consectetur
+                   adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.')
 r3 = Recipe.create(name: 'Recipe 3', public: true, user: u1, cooking_time: Time.parse('2:00'),
                    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
                 tempor incididunt ut labore et dolore magna aliqua.')

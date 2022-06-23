@@ -23,7 +23,7 @@ RSpec.describe 'recipes/show', type: :feature do
     end
 
     it "the public switch switches the recipe's public column" do
-      check "recipe_public"
+      check 'recipe_public'
       expect(Recipe.first.public).to be(false)
     end
 
@@ -50,7 +50,7 @@ RSpec.describe 'recipes/show', type: :feature do
     end
 
     it 'renders the ingredients' do
-      expect(page).to have_content('Chicken breasts 3 unit $6')
+      expect(page).to have_content('Chicken 3 unit $6')
       expect(page).to have_content('Sugar 3 cups $21')
     end
 
