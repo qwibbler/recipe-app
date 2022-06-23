@@ -7,7 +7,7 @@ class Recipe < ApplicationRecord
   validates :description, presence: true
 
   def total_food
-    recipe_foods.count
+    recipe_foods.size
   end
 
   def total_price
