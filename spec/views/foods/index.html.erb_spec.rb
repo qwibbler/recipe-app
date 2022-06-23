@@ -9,7 +9,7 @@ RSpec.describe 'foods/index', type: :feature do
   end
 
   it 'renders a list of foods' do
-    expect(page).to have_selector('table.foodIndex_table')
+    expect(page).to have_selector('table.foodIndex')
   end
 
   it 'renders the navbar' do
