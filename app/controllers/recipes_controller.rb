@@ -25,7 +25,7 @@ class RecipesController < ApplicationController
   end
 
   def update
-    if @recipe.update(recipe_params)
+    if @recipe.update(params.require(:recipe).permit(:public))
       flash.now[:notice] = 'Recipe was successfully updated.'
     else
       flash.now[:error] = 'Recipe was not updated.'
@@ -38,7 +38,7 @@ class RecipesController < ApplicationController
   end
 
   def public
-    @recipes = Recipe.where(public: true).order(created_at: :desc)
+    @recipes = Recipe.where(public: true).includes(:user, recipe_foods: [:food]).order(created_at: :desc)
   end
 
   private

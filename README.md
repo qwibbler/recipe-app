@@ -2,7 +2,7 @@
 ![](https://wakatime.com/badge/user/be79098d-c59e-407c-8952-0f274bb9e265/project/502f658b-24f6-4a07-95bf-f0b4c42f6b84.svg)
  #  Recipe App
 
-The Recipe app keeps track of all your recipes and ingredients. It will allow you to save ingredients, keep track of what you have, create recipes, and generate a shopping list based on what you have and what you are missing from a recipe. Also, since sharing recipes is an important part of cooking the app should allow you to make them public so anyone can access them. 
+The Recipe app keeps track of all your recipes and ingredients. It will allow you to save ingredients, keep track of what you have, create recipes, and generate a shopping list based on what you have and what you are missing from a recipe. Also, since sharing recipes is an important part of cooking, this app should allow you to make them public so anyone can access them. 
  
  ## Built With
 
@@ -34,7 +34,6 @@ To run the project,
 
 
 ## Runnig tests
-- run `rails db:seed RAILS_ENV=test`
 - run `rails db:seed RAILS_ENV=test`
 - run `rspec`
 
