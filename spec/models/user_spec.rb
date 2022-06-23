@@ -1,14 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  subject do
-    User.new(
-      name: 'Tom Sawyer',
-      email: 'user1@example.com',
-      password: 'password'
-    )
-  end
-
+  subject { User.new(name: 'Tom Sawyer', email: 'user1@example.com', password: 'password') }
   before(:example) { subject.save }
 
   it 'is valid' do
@@ -42,30 +35,20 @@ RSpec.describe User, type: :model do
 
   describe 'checks method missing_foods_qt' do
     before do
-      u2 = User.new(name: 'test2', email: 'test2@example.com', password: 'password', created_at: Time.now)
-
-      f1 = Food.create(name: 'Apple', measurement_unit: 'grams', price: 5, user: subject)
-      @f2 = Food.create(name: 'Chicken', measurement_unit: 'unit', price: 2, user: u2)
-
-      r1 = Recipe.create(name: 'Recipe 1', public: false, user: subject, description: 'desc')
-      r2 = Recipe.create(name: 'Recipe 2', public: true, user: subject, description: 'desc')
-
-      RecipeFood.create(recipe: r1, food: @f2, quantity: 3)
-
-      RecipeFood.create(recipe: r2, food: f1, quantity: 3)
-      RecipeFood.create(recipe: r2, food: @f2, quantity: 3)
+      @mfq = User.first.missing_foods_qt
     end
 
     it 'should have 1 item' do
-      expect(subject.missing_foods_qt.count).to eq(1)
+      expect(@mfq.count).to eq(2)
     end
 
     it 'should have be the food created by another user' do
-      expect(subject.missing_foods_qt.first[0]).to eq(@f2)
+      users = @mfq.keys.map(&:user)
+      expect(users).to_not include(User.first)
     end
 
-    it 'should have the quantity 6' do
-      expect(subject.missing_foods_qt.keys[0]).to eq(@f2)
+    it 'should have right quantities' do
+      expect(@mfq.values).to match_array([3, 6])
     end
   end
 end
