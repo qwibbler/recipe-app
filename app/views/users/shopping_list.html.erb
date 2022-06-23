@@ -1,0 +1,14 @@
+<section class="shoppingList">
+  <% if current_user %>
+    <h4>Amount of food items to buy: <%= @foods_list.size %></h4>
+    <h4>Total value of food needed: $<%= @total_price %></h4>
+    <%= render "shopping_list", foods: @foods_list %>
+  <% else %>
+    <p>
+      Sorry, you must
+      <%= link_to "log in", new_user_session_path %>
+      to use this feature.
+    </p>
+  <% end %>
+
+</section>
