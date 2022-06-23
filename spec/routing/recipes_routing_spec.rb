@@ -14,8 +14,8 @@ RSpec.describe RecipesController, type: :routing do
       expect(get: '/recipes/1').to route_to('recipes#show', id: '1')
     end
 
-    it 'routes to #edit' do
-      expect(get: '/recipes/1/edit').to route_to('recipes#edit', id: '1')
+    it 'routes to #public' do
+      expect(get: '/public_recipes').to route_to('recipes#public')
     end
 
     it 'routes to #create' do

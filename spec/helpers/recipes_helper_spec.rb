@@ -1,15 +1,23 @@
 require 'rails_helper'
 
-# Specs in this file have access to a helper object that includes
-# the RecipesHelper. For example:
-#
-# describe RecipesHelper do
-#   describe "string concat" do
-#     it "concats two strings with spaces" do
-#       expect(helper.concat_strings("this","that")).to eq("this that")
-#     end
-#   end
-# end
 RSpec.describe RecipesHelper, type: :helper do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it 'returns time in hours' do
+    expect(helper.time_hrs(Time.parse('2:00'))).to eq('2 hours')
+  end
+
+  it "returns plural 'hours' if time greater than 2" do
+    expect(helper.time_hrs(Time.parse('2:00'))).to eq('2 hours')
+  end
+
+  it "returns singular 'hour' if time less than 1" do
+    expect(helper.time_hrs(Time.parse('1:00'))).to eq('1 hour')
+  end
+
+  it "returns 'N/A' if time is 0" do
+    expect(helper.time_hrs(Time.parse('0:00'))).to eq('N/A')
+  end
+
+  it "returns 'N/A' if time is nil" do
+    expect(helper.time_hrs(nil)).to eq('N/A')
+  end
 end
