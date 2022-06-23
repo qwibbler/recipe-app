@@ -7,13 +7,13 @@ f3 = Food.create(name: 'Chicken breasts', measurement_unit: 'unit', price: 2, us
 f3 = Food.create(name: 'Sugar', measurement_unit: 'cups', price: 7, user: u2)
 
 r1 = Recipe.create(name: 'Recipe 1', public: false, user: u1,
-  description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                   description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
                 tempor incididunt ut labore et dolore magna aliqua.')
 r2 = Recipe.create(name: 'Recipe 2', public: true, user: u1,
-  description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                   description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
                 tempor incididunt ut labore et dolore magna aliqua.')
 r3 = Recipe.create(name: 'Recipe 3', public: true, user: u1,
-  description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                   description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
                 tempor incididunt ut labore et dolore magna aliqua.')
 
 r2f1 = RecipeFood.create(recipe: r2, food: f1, quantity: 3)

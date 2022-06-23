@@ -1,14 +1,13 @@
 require 'rails_helper'
 
 RSpec.describe 'recipes/index', type: :feature do
-
-    before :each do
-        visit new_user_session_path
-        fill_in 'Email', with: 'john@example.com'
-        fill_in 'Password', with: 'password'
-        click_button 'Log in'
-        visit '/recipes'
-    end
+  before :each do
+    visit new_user_session_path
+    fill_in 'Email', with: 'john@example.com'
+    fill_in 'Password', with: 'password'
+    click_button 'Log in'
+    visit '/recipes'
+  end
 
   it 'renders a list of recipes' do
     expect(page).to have_content('Recipe 1')
