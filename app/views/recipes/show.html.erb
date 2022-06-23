@@ -10,7 +10,9 @@
   <% end %>
 
   <div>
-    <%= button_to "Delete Recipe", @recipe, method: :delete, class:"link_Btn" %>
+    <% if can? :manage, @recipe %>
+      <%= button_to "Delete Recipe", @recipe, method: :delete, class:"link_Btn" %>
+    <% end %>
     <%= link_to "Back to Recipes List", recipes_path, class:"link_Btn" %>
   </div>
 </section>
