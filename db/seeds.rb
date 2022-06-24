@@ -6,13 +6,13 @@ f2 = Food.create(name: 'Pineapple', measurement_unit: 'grams', price: 1, user: u
 f3 = Food.create(name: 'Chicken', measurement_unit: 'unit', price: 2, user: u2)
 f4 = Food.create(name: 'Sugar', measurement_unit: 'cups', price: 7, user: u2)
 
-r1 = Recipe.create(name: 'Recipe 1', public: false, user: u1, preparation_time: Time.parse('1:00'),
+r1 = Recipe.create(name: 'Recipe 1', public: false, user: u1, preparation_time: "01:00:00",
                    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
                 tempor incididunt ut labore et dolore magna aliqua.')
-r2 = Recipe.create(name: 'Recipe 2', public: true, user: u1, preparation_time: Time.parse('1:00'),
-                   cooking_time: Time.parse('2:00'), description: 'Lorem ipsum dolor sit amet, consectetur
+r2 = Recipe.create(name: 'Recipe 2', public: true, user: u1, preparation_time: "01:00:00",
+                   cooking_time: "02:00:00", description: 'Lorem ipsum dolor sit amet, consectetur
                    adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.')
-r3 = Recipe.create(name: 'Recipe 3', public: true, user: u1, cooking_time: Time.parse('2:00'),
+r3 = Recipe.create(name: 'Recipe 3', public: true, user: u1, cooking_time: "02:00:00",
                    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
                 tempor incididunt ut labore et dolore magna aliqua.')
 

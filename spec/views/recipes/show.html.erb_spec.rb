@@ -28,7 +28,7 @@ RSpec.describe 'recipes/show', type: :feature do
     end
 
     it 'renders the preparation_time' do
-      expect(page).to have_content('Preparation time: 7 hours')
+      expect(page).to have_content('Preparation time: 1 hour')
     end
 
     it 'renders the cooking_time' do
@@ -96,8 +96,8 @@ RSpec.describe 'recipes/show', type: :feature do
     end
 
     it 'renders the details' do
-      expect(page).to have_content('Preparation time: 7 hours')
-      expect(page).to have_content('Cooking time: 8 hours')
+      expect(page).to have_content('Preparation time: 1 hour')
+      expect(page).to have_content('Cooking time: 2 hours')
       expect(page).to have_content('Lorem ipsum dolor sit amet')
       expect(page).to have_content('labore et dolore magna aliqua.')
     end
