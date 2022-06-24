@@ -1,0 +1,14 @@
+<table class="foodIndex table">
+  <tr>
+    <th>Food</th>
+    <th>Quantity</th>
+    <th>Value</th>
+  </tr>
+  <% foods.each do |food, qt| %>
+    <tr>
+      <td><%= food.name %></td>
+      <td><%= qt %> <%= food.measurement_unit %></td>
+      <td>$<%= food.price %></td>
+    </tr>
+  <% end %>
+</table>

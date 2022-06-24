@@ -1,0 +1,4 @@
+<section class="foodIndex">
+  <%= button_to "Add food", new_food_path, method: :get%>
+  <%= render "food_table", foods: @foods %>
+</section>

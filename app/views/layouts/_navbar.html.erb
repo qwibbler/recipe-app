@@ -1,0 +1,23 @@
+<header class="navbar">
+    <div class="navbar_left">
+        <a href="/" class="title">Recipe App</a>
+    </div>
+    <div class="navbar_middle">
+        <nav class="nav">
+            <ul class="nav_wrapper">
+              <li class="nav_item"><a href="/">Home</a></li>
+              <li class="nav_item"><a href="/foods">Foods</a></li>
+              <li class="nav_item"><a href="/recipes">Recipes</a></li>
+              <li class="nav_item"><a href="/public_recipes">Public Recipes</a></li>
+              <li class="nav_item"><a href="/general_shopping_list">Shopping List</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="navbar_right">
+        <% if user_signed_in? %>
+          <%= button_to "Log out", destroy_user_session_path, method: :delete, class:"sessionButton"%>
+        <% else %>
+          <%= button_to "Sign in", new_user_session_path, method: :get, class:"sessionButton"%>
+        <% end %>
+    </div>
+</header>

@@ -1,0 +1,229 @@
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+.nav_wrapper {
+  display: flex;
+}
+
+.nav_item {
+  list-style: none;
+}
+
+.nav_item a {
+  text-decoration: none;
+  color: black;
+  padding: 1rem;
+}
+
+.navbar_left {
+  margin: 0;
+  padding: 0;
+  vertical-align: baseline;
+}
+
+.title {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.navbar_middle {
+  margin: 0;
+  padding: 0;
+  margin-left: auto;
+  vertical-align: 0;
+}
+
+.sessionButton {
+  padding: 0.5rem 1rem;
+  text-align: center;
+}
+
+section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Add food button inside food index */
+.foodIndex :first-child {
+  align-self: center;
+}
+
+/* food index table */
+.table {
+  border: 2pt black solid;
+  align-self: center;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.foodIndex.table {
+  width: 80%;
+}
+
+.foodShow.table {
+  width: 100%;
+}
+
+/* food index table stripped */
+.table tr:nth-child(odd) {
+  background-color: #f2f2f2;
+}
+
+tr > * {
+  padding: 1rem;
+  border-left: 2px solid black;
+}
+
+th {
+  border-bottom: 2px black solid;
+}
+
+/* delete food button inside food index table */
+.link_Btn {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  color: blue;
+  text-decoration: underline;
+  margin: 0 4px;
+}
+
+/* new food form */
+form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  margin-bottom: 10px;
+  align-self: center;
+  min-width: 33%;
+}
+
+form > div {
+  display: flex;
+  flex-direction: column;
+}
+
+.public {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+button,
+input {
+  padding: 0.2rem;
+}
+
+/* recipe index section */
+.recipesList {
+  width: 80%;
+}
+
+/* recipe index | individual recipe inside the list */
+.recipeList_recipe {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+  border: 2pt black solid;
+  padding: 7px;
+}
+
+/* recipe index | individual recipe inside the list | left part  */
+.recipeList_recipe_left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 30%;
+  padding: 7px;
+}
+
+/* recipe index | individual recipe inside the list | rigth part  */
+.recipeList_recipe_rigth {
+  width: 70%;
+  padding: 7px;
+}
+
+.btns {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.recipeShow_top {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  flex-direction: row-reverse;
+}
+
+.recipeShow_top_left {
+  flex-grow: 1;
+}
+
+/* Switch */
+.switch {
+  --diameter: 14px;
+  --margin: 2px;
+
+  position: relative;
+  width: calc(calc(var(--diameter) * 2) + calc(var(--margin) * 2));
+  height: calc(var(--diameter) + calc(var(--margin) * 2));
+  margin: 0.3rem;
+  display: inline-block;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.slider::before {
+  position: absolute;
+  content: '';
+  height: var(--diameter);
+  width: var(--diameter);
+  left: var(--margin);
+  bottom: var(--margin);
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #68ad68;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #68ad68;
+}
+
+input:checked + .slider::before {
+  -webkit-transform: translateX(var(--diameter));
+  -ms-transform: translateX(var(--diameter));
+  transform: translateX(var(--diameter));
+}

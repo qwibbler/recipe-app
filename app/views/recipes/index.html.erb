@@ -1,0 +1,8 @@
+<section class="recipeIndex">
+  <%= button_to "New recipe", new_recipe_path, method: :get,  class: "recipeIndex_newBtn"%>
+  <div class="recipesList">
+    <% @recipes.each do |recipe| %>
+      <%= render "recipe_index", recipe: recipe%>
+    <% end %>
+  </div>
+</section>

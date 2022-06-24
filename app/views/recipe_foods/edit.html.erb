@@ -1,0 +1,10 @@
+<section class="foodNew">
+  <h1>Edit Ingredient</h1>
+
+  <%= form_with model: @recipe_food, class: "recipefoodEdit_form", url: recipe_recipe_food_path(@recipe, @recipe_food) do |f| %>
+    <%= render "add_ingredient", f: f, recipe_food: @recipe_food %>
+    <%= f.submit "Edit Ingredient" %>
+  <% end %>
+  <%= button_to "Back to Recipe", @recipe, method: :get, class:"foodNew_backBtn" %>
+
+</section>

@@ -1,0 +1,8 @@
+<section class="recipesNew">
+  <h1 class="recipesNew_title">New recipe</h1>
+
+  <%= render "form", recipe: @recipe %>
+
+  <%= button_to "Back to recipes", recipes_path, method: :get%>
+
+</section>
