@@ -6,7 +6,7 @@ RSpec.describe 'recipes/show', type: :feature do
     fill_in 'Email', with: 'john@example.com'
     fill_in 'Password', with: 'password'
     click_button 'Log in'
-    visit recipe_path(id: 1)
+    visit recipe_path(id: Recipe.first.id,)
   end
 
   describe 'private recipe for logged in users' do
@@ -67,7 +67,7 @@ end
 
 RSpec.describe 'recipes/show', type: :feature do
   before do
-    visit recipe_path(id: 1)
+    visit recipe_path(id: Recipe.first.id)
   end
 
   describe 'private recipe for logged out users' do
@@ -79,10 +79,10 @@ end
 
 RSpec.describe 'recipes/show', type: :feature do
   before do
-    visit recipe_path(id: 2)
+    visit recipe_path(id: Recipe.last.id)
   end
 
-  describe 'private recipe for logged out users' do
+  describe 'public recipe for logged out users' do
     it 'renders the header' do
       expect(page).to have_content('Recipe App')
     end
