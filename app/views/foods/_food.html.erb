@@ -2,5 +2,8 @@
   <td><%=food.name%></td>
   <td><%=food.measurement_unit%></td>
   <td>$<%=food.price%></td>
-  <td><%= button_to "Delete", "foods/#{food.id}", method: :delete, class:"link_Btn"%></td>
+  <td>
+    <%  if can? :manage?, food %>
+      <%= button_to "Delete", "foods/#{food.id}", method: :delete, class:"link_Btn"%></td>
+    <% end %>
 </tr>
